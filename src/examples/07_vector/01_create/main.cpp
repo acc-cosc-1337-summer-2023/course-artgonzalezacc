@@ -6,24 +6,36 @@ using std::vector;
 
 int main()
 {
-    vector<int> nums{1, 10, 7};
+    vector<int> nums0;
+    nums0.push_back(5);//add one element to the vector
 
-    cout<<nums[0]<<"\n";
-    nums[0] =  5;
-    cout<<nums[0]<<"\n";
-    cout<<"Size: "<<nums.size()<<"\n";
-    cout<<"Capacity: "<<nums.capacity()<<"\n";
+    vector<int> nums1{1, 10, 7};
 
-    nums.push_back(20);
-    cout<<"Size: "<<nums.size()<<"\n";
-    cout<<"Capacity: "<<nums.capacity()<<"\n";
+    cout<<nums1[0]<<"\n";
 
-    nums.push_back(15);
-    nums.push_back(11);
-    nums.push_back(21);
+    vector<int> nums3(5, 100);
 
-    cout<<"Size: "<<nums.size()<<"\n";
-    cout<<"Capacity: "<<nums.capacity()<<"\n";
+    for(auto n: nums3)
+    {
+        cout<<n<<"\n";
+    }
+
+    cout<<"\n";
+
+    vector<char> chars{'a', 'b'};
+
+    for(auto ch: chars)
+    {
+        cout<<ch;
+    }
+
+    cout<<"\n";
+
+    for(auto i=0; i < chars.size(); i++)
+    {
+        cout<<chars[i]<<"\n";
+    }
+
 
     return 0;
 }
