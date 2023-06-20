@@ -1,6 +1,9 @@
 //bank_account.h
 #include<iostream>
 
+#ifndef BANK_ACCOUNT_H
+#define BANK_ACCOUNT_H
+
 class BankAccount
 {
 
@@ -14,3 +17,5 @@ private://access specifier
     int balance{0};//explicity init to 0
     
 };
+
+#endif
