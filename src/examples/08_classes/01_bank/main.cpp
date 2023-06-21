@@ -20,7 +20,7 @@ int main()
 	run_menu(accounts);
 
 	cout<<accounts[0].get_balance()<<"\n";
-	cout<<accounts[0].get_balance()<<"\n";
+	cout<<accounts[1].get_balance()<<"\n";
 
 	return 0;
 }
