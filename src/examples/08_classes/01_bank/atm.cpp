@@ -12,13 +12,13 @@ void display_menu()
     cout<<"4-Exit\n";
 }
 
-void run_menu(std::vector<BankAccount>& accounts)
+void run_menu(std::vector<BankAccount*>& accounts)
 {
     auto accountIndex = 0;
     cout<<"Enter 1 for checking 2 for savings: ";
     cin>>accountIndex;
 
-    BankAccount& account = accounts[accountIndex-1];
+    BankAccount* account = accounts[accountIndex-1];
 
     auto choice = 0;
 
@@ -32,24 +32,24 @@ void run_menu(std::vector<BankAccount>& accounts)
     } while (choice !=4);
 }
 
-void handle_option(BankAccount& account, int option)
+void handle_option(BankAccount* account, int option)
 {
     auto amount = 0;
 
     switch(option)
     {
     case 1:
-        cout<<"Balance: "<<account.get_balance()<<"\n";
+        cout<<"Balance: "<<account->get_balance()<<"\n";
         break;
     case 2:
         cout<<"Enter amount to deposit: ";
         cin>>amount;
-        account.deposit(amount);
+        account->deposit(amount);
         break;
     case 3:
         cout<<"Enter amount to withdraw: ";
         cin>>amount;
-        account.withdraw(amount);
+        account->withdraw(amount);
         break;
     case 4:
         cout<<"Program will exit....\n";

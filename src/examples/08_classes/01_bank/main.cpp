@@ -11,16 +11,18 @@ using std::vector;
 
 int main()
 {
-	std::vector<BankAccount> accounts;
-	
-	accounts.push_back(CheckingAccount(100));
+	std::vector<BankAccount*> accounts;
+	CheckingAccount checking(100) ;
 
-	accounts.push_back(SavingsAccount(300));
+	accounts.push_back(&checking);
+
+	SavingsAccount savings(300);
+	accounts.push_back(&savings);
 
 	run_menu(accounts);
 
-	cout<<accounts[0].get_balance()<<"\n";
-	cout<<accounts[1].get_balance()<<"\n";
+	cout<<accounts[0]->get_balance()<<"\n";
+	cout<<accounts[1]->get_balance()<<"\n";
 
 	return 0;
 }
