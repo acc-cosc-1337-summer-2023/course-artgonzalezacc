@@ -11,7 +11,7 @@ using std::vector;
 
 int main()
 {
-	std::vector<BankAccount*> accounts;
+    std::vector<BankAccount*> accounts;
 	CheckingAccount checking(100) ;
 
 	accounts.push_back(&checking);
