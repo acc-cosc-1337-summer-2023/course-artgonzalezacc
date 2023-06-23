@@ -1,7 +1,7 @@
 //atm.cpp
 #include "atm.h"
 
-using std::cin; using std::cout;
+using std::cin; using std::cout; using std::unique_ptr;
 
 void display_menu()
 {
@@ -12,14 +12,14 @@ void display_menu()
     cout<<"4-Exit\n";
 }
 
-void run_menu(std::vector<BankAccount*>& accounts)
+void run_menu(std::vector<unique_ptr<BankAccount>>& accounts)
 {
     auto accountIndex = 0;
     cout<<"Enter 1 for checking 2 for savings: ";
     cin>>accountIndex;
 
-    BankAccount* account = accounts[accountIndex-1];
-
+    BankAccount* account = accounts[accountIndex-1].get();
+    
     auto choice = 0;
 
     do
