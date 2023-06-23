@@ -17,6 +17,15 @@ int main()
 	accounts.push_back(make_unique<CheckingAccount>(100));
 	accounts.push_back(make_unique<SavingsAccount>(300));
 
+	unique_ptr<BankAccount> checking = make_unique<CheckingAccount>(200);
+	unique_ptr<BankAccount> savings = make_unique<SavingsAccount>(400);
+
+	accounts.push_back(std::move(checking));
+	accounts.push_back(std::move(savings));
+
+	//after the move checking and savings unique_ptrs are invalidated
+	//they don't referency any data; if you use them program generates memory error
+
 	run_menu(accounts);
 
 	cout<<accounts[0]->get_balance()<<"\n";
