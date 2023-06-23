@@ -1,15 +1,13 @@
 #include<iostream>
+#include<memory>
 
 using std::cout;
+using std::unique_ptr; using std::make_unique;
 
 int main() 
 {
-	//1--create memory
-	int* int_ptr = new int(10);//creates memory on the heap dynamically
-	//2-use memory
-	cout<<*int_ptr<<"\n";
-	//3-free or delete memory from the heap/free store
-	delete int_ptr;
-	
+	unique_ptr<int> num = make_unique<int>(25);
+	cout<<*num<<"\n";
+
 	return 0;
 }
