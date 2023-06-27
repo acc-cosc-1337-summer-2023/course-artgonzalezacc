@@ -16,29 +16,23 @@ using std::vector;
 int main() 
 {
 	vector<Shape*> shapes;
-	
-	Shape* shape;
 
-	Circle circle;
-	circle.draw();
-	shapes.push_back(&circle);
+	//create heap dynamic memory
+	shapes.push_back(new Circle());
+	shapes.push_back(new Line());
 
-	shape = &circle;
-	shape->draw();
-
-	Line line;
-	line.draw();
-
-	shape = &line;
-	shape->draw();
-	shapes.push_back(&line);
-
-	std::cout<<"\n\nVector output\n\n";
-
+	//use the memory
 	for(auto shape: shapes)
 	{
 		shape->draw();
 	}
+
+	//delete or clear the memory
+	for(auto& shape: shapes)
+	{
+		delete shape;
+	}
+
 
 	return 0;
 }
