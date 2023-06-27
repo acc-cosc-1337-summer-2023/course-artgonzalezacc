@@ -13,6 +13,19 @@ iterate with auto
 
 int main() 
 {
+	Shape* shape;
+
+	Circle circle;
+	circle.draw();
+
+	shape = &circle;
+	shape->draw();
+
+	Line line;
+	line.draw();
+
+	shape = &line;
+	shape->draw();
 
 	return 0;
 }
