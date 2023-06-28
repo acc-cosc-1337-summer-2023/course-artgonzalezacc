@@ -11,8 +11,8 @@ public://access specifier
     BankAccount(){std::cout<<"Using default constructor\n";}//default constructor
     BankAccount(int b) :balance(b) {std::cout<<"Using parameterized constructor\n";}//class constructor
     virtual int get_balance() const = 0;//pure virtual function
-    void deposit(int amount);
-    void withdraw(int amount);
+    virtual void deposit(int amount) final;
+    virtual void withdraw(int amount) final;
 private://access specifier
     int balance{0};//explicity init to 0
     
