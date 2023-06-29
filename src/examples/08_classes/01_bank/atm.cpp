@@ -14,37 +14,40 @@ void display_menu()
 
 void run_menu(std::vector<unique_ptr<Customer>>& customers)
 {
-    auto new_transaction = 'n';
-    cout<<"Scan card...";
-    cin>>new_transaction;
-    auto customer_index = scan_card(customers.size());
-
-    auto& customer = customers[customer_index];
-
-    do
+    
+    do  
     {
-        auto accountIndex = 0;
-        cout<<"Enter 1 for checking 2 for savings: ";
-        cin>>accountIndex;
+        auto new_transaction = 'n';
+        cout<<"Scan card...";
+        cin>>new_transaction;
+        auto customer_index = scan_card(customers.size());
 
-        BankAccount* account = customer->get_account(accountIndex-1).get();
-        
-        auto choice = 0;
+        auto& customer = customers[customer_index];
 
         do
         {
-            display_menu();
-            cout<<"Enter choice: ";
-            cin>>choice;
-            handle_option(account, choice);
+            auto accountIndex = 0;
+            cout<<"Enter 1 for checking 2 for savings: ";
+            cin>>accountIndex;
 
-        } while (choice !=4);
+            BankAccount* account = customer->get_account(accountIndex-1).get();
+            
+            auto choice = 0;
 
-        cout<<"\nEnter another transaction type y...\n";
-        cin>>new_transaction;
+            do
+            {
+                display_menu();
+                cout<<"Enter choice: ";
+                cin>>choice;
+                handle_option(account, choice);
 
-    } while (new_transaction == 'Y' || new_transaction == 'y');
+            } while (choice !=4);
 
+            cout<<"\nEnter another transaction type y...\n";
+            cin>>new_transaction;
+
+        } while (new_transaction == 'Y' || new_transaction == 'y');
+    }while(true);
 }
 
 void handle_option(BankAccount* account, int option)
