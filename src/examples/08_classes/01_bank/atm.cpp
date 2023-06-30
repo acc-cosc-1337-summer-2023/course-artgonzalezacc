@@ -12,7 +12,7 @@ void display_menu()
     cout<<"4-Exit\n";
 }
 
-void run_menu(std::vector<unique_ptr<Customer>>& customers)
+void run_menu(std::vector<Customer>& customers)
 {
     
     do  
@@ -30,7 +30,7 @@ void run_menu(std::vector<unique_ptr<Customer>>& customers)
             cout<<"Enter 1 for checking 2 for savings: ";
             cin>>accountIndex;
 
-            BankAccount* account = customer->get_account(accountIndex-1).get();
+            BankAccount* account = customer.get_account(accountIndex-1).get();
             
             auto choice = 0;
 
