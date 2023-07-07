@@ -15,17 +15,25 @@ using std::vector; using std::unique_ptr; using std::make_unique;
 
 int main() 
 {
-	vector<unique_ptr<Shape>> shapes;
+	const int SIZE = 3;
+	Circle circles[SIZE];
 
-	shapes.push_back(make_unique<Circle>());
-	shapes.push_back(make_unique<Line>());
+	circles[0].draw();
+	circles[1].draw();
+	circles[2].draw();
 
-	for(auto& shape: shapes)
+	Line lines[SIZE];
+
+	for(auto line: lines)
 	{
-		shape->draw();
+		line.draw();
 	}
+	
+	Shape* shape = &circles[2];
+	shape->draw();
 
-	//we don't have to worry about calling delete
+	shape = &lines[1];
+	shape->draw();
 
 	return 0;
 }
