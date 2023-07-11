@@ -1,13 +1,17 @@
 #include<iostream>
-#include<memory>
 
 using std::cout;
-using std::unique_ptr; using std::make_unique;
 
 int main() 
 {
-	unique_ptr<int> num = make_unique<int>(25);
-	cout<<*num<<"\n";
+	//create memory
+	int* num_ptr = new int(5);
+
+	//use the memory
+	cout<<*num_ptr<<"\n";
+
+	//delete the memory
+	delete num_ptr;
 
 	return 0;
 }
