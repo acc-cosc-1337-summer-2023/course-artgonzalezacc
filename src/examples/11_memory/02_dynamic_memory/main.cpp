@@ -1,23 +1,14 @@
 #include<iostream>
+#include "dynamic_memory.h"
 
 using std::cout;
 
 int main() 
 {
-	//create memory
-	int* num_ptr = new int(5);
-
-	//use the memory
-	cout<<*num_ptr<<"\n";
-
-	//delete the memory
-	delete num_ptr;
-
-	//dynamic array(list) of integers
-	int* nums = new int[3]{};
-	cout<<nums[0]<<"\n";
-
-	delete nums;
+	//use_dynamic_memory_array(3);
+	//limit_dynamic_memory_scope(3);
+	cout<<"Call use dynamic memory\n";
+	use_dynamic_memory(3);
 
 	return 0;
 }
