@@ -2,10 +2,12 @@
 
 int main() 
 {
-	//call function 1 time
-	
-
-	//call function in a loop
+	memory_leak();//grabbed memory
+	memory_leak();//grabbed memory
+	memory_leak();//grabbed memory
+	memory_leak();//grabbed memory
+	memory_leak();//grabbed memory
+	memory_leak();//grabbed memory
 	
 	
 	return 0;
