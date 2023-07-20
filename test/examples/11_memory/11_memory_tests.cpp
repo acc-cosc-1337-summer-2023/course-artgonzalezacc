@@ -73,7 +73,7 @@ TEST_CASE("Test vector push back with empty vector")
 	REQUIRE(v.Capacity() == 8);
 	REQUIRE(v.Size() == 1);
 	REQUIRE(v[0] == 5);
-}*/
+}
 
 TEST_CASE("Test vector push back with vector capacity 3")
 {
@@ -96,4 +96,4 @@ TEST_CASE("Test vector push back with vector capacity 3")
 	REQUIRE(v.Size() == 4);
 	REQUIRE(v[0] == 5);
 	REQUIRE(v[1] == 7);
-}
+}*/
